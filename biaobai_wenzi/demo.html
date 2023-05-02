@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+    <base href="<?php echo $baseurl?>biaobai_wenzi/" />
+		<meta charset="utf-8" />
+		
+		<title><?php echo $con1?></title>
+        <link rel="stylesheet" type="text/css" href="css/main.css"/>
+		
+		<script type="text/javascript">
+function stops(){
+   return false;
+}
+document.oncontextmenu=stops;
+</script>
+	</head>
+	<body>
+		<article>
+			<p class="text" id="text"><?php echo $con3?></p>
+			<button id="btn" ele-range><?php echo $con5?></button>
+		</article>
+		<script src="css/text.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var resetbtn = document.getElementById("btn");
+			var neontext = new Neontext("text");
+			var btn = new Neontext("btn");
+			neontext.render.run();
+			btn.render.run();
+			resetbtn.addEventListener("click",function(){
+				neontext.render.killer();
+				btn.render.killer();
+			})
+		</script>
+
+<audio autoplay="autoplay"><source src="<?php echo $con6?>" type="audio/mpeg"/></audio>
+<?php echo $tongji?>
+	</body>
+    
+</html>
+ 
