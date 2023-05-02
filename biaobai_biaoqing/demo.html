@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <base href="<?php echo $baseurl?>biaobai_biaoqing/" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title><?php echo $con1?></title>
+    <script src="js/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+
+  
+</head>
+<body>
+<div class="container">
+    <div class="row col-md-3"></div>
+    <div class="row col-md-6">
+        <div class="row question">
+            <div class="col-md-6 col-xs-12">
+                <p style="line-height: 50px;font-size: 10px;">“<?php echo $con1?>”</p>
+                <br />
+                <p style="line-height: 50px;font-size: 20px;"><?php echo $con2?></p>
+            </div>
+            <div class="col-md-6 col-xs-12">
+                <img src="img/1.jpg" alt="" style="height: 200px;">
+            </div>
+        </div>
+        <div class="row question" style="margin-top: 20px;">
+            <div class="col-md-6 col-xs-6" style="text-align: center;">
+                <button type="button" class="btn btn-success" style="width: 80%" id="no">好</button>
+            </div>
+            <div class="col-md-6 col-xs-6" style="text-align: center;">
+                <button type="button" class="btn btn-danger" style="width: 80%" id="ok">不好</button>
+            </div>
+        </div>
+        <div class="col-md-12 col-xs-12 hide" id="success">
+            <img src="img/2.gif" alt="" style="width: 100%;">
+        </div>
+    </div>
+
+    <div class="row col-md-3"></div>
+
+</div>
+<script>
+    var i=1;
+    var ok=false;
+    $(document).ready(function(){
+        $("#no").click(function(){
+            alert("真的吗？你答应了？");
+            $(".question").addClass('hide');
+            $("#success").removeClass('hide');
+            ok=true;
+        });
+        $("#ok").click(function(){
+            switch(i){
+                case 1:
+                    alert("全听你的");
+                    break;
+                case 2:
+                    alert("给你好的");
+                    break;
+                case 3:
+                    alert("永远爱你一个");
+                    break;
+				case 4:
+                    alert("不会犯错");
+                    break;
+                default:
+                    alert("答应我吧");
+            }
+            i++;
+        });
+    });
+</script>
+
+
+
+
+        <audio autoplay="autopaly">
+<source src="<?php echo $con3?>" />
+</audio>
+
+</body></html>
